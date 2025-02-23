@@ -1,0 +1,1197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--white-off);
+    color: #333;
+    line-height: 1.6;
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('wedding-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: gradientBG 20s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.names {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInDown 1.5s;
+    background: linear-gradient(45deg, var(--pink-medium), var(--pink-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.wedding-date {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+}
+
+.countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 100px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.countdown-item span {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.countdown-item p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.wedding-card {
+    max-width: 1200px;
+    margin: -100px auto 0;
+    background: linear-gradient(to bottom right, var(--white), var(--white-off));
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    animation: slideUp 1s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.couple-section {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.couple-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 auto 20px;
+    border: none;
+    box-shadow: 0 0 0 5px rgba(255, 107, 107, 0.3),
+                0 0 0 10px rgba(255, 107, 107, 0.2);
+    transition: all 0.5s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 8px rgba(255, 107, 107, 0.3),
+                0 0 0 16px rgba(255, 107, 107, 0.2);
+}
+
+.heart-divider {
+    color: #ff6b6b;
+    font-size: 2rem;
+}
+
+.heart-divider i {
+    animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.event-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 107, 107, 0.2);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 107, 107, 0.1);
+}
+
+.event-card i {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+}
+
+.map-btn {
+    background: none;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.map-btn:hover {
+    background: #ff6b6b;
+    color: white;
+}
+
+.love-story {
+    padding: 60px 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--pink-light), var(--pink-medium));
+}
+
+.story-item {
+    position: relative;
+    margin-bottom: 40px;
+    width: calc(50% - 30px);
+    transition: all 0.3s ease;
+}
+
+.story-item:nth-child(odd) {
+    margin-left: auto;
+}
+
+.story-item:hover {
+    transform: scale(1.02);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,107,107,0.3), rgba(255,217,61,0.3));
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
+}
+
+.rsvp-form {
+    max-width: 600px;
+    margin: 30px auto;
+    display: grid;
+    gap: 20px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.rsvp-form button {
+    background: linear-gradient(45deg, var(--pink-light), var(--pink-medium));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255,105,180,0.4);
+}
+
+.rsvp-form button i {
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+
+/* Hiệu ứng trái tim bay ra khi hover */
+.rsvp-form button:hover i {
+    animation: flyHeart 1s ease-in-out;
+}
+
+@keyframes flyHeart {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2) rotate(20deg);
+    }
+    50% {
+        transform: scale(1.4) rotate(-20deg) translateY(-5px);
+    }
+    75% {
+        transform: scale(1.6) rotate(20deg) translateY(-10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Thêm trái tim mới sau khi trái tim cũ bay đi */
+.rsvp-form button:hover::after {
+    content: '\f004';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    right: 30px;
+    font-size: 1.2rem;
+    animation: newHeart 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes newHeart {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.wishes {
+    padding: 40px 0;
+    background: #fff;
+    border-radius: 15px;
+    margin: 30px 0;
+}
+
+.wishes h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.wishes-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+/* Style cho từng lời chúc */
+.wish-item {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wish-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.wish-item .sender {
+    font-weight: 600;
+    color: #ff6b6b;
+    margin-bottom: 5px;
+}
+
+.wish-item .message {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.wish-reaction {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.reaction-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    position: relative;
+    color: var(--pink-dark);
+    font-size: 1.2rem;
+}
+
+/* Hiệu ứng khi click */
+.wish-reaction.active .reaction-emoji {
+    transform: scale(1.3);
+    animation: heartBeat 0.3s ease-in-out;
+}
+
+/* Hiệu ứng trái tim bay lên */
+.flying-heart {
+    position: fixed;
+    color: var(--pink-dark);
+    font-size: 1.2rem;
+    pointer-events: none;
+    animation: flyingHeart 1s ease-out forwards;
+    z-index: 1000;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); }
+    100% { transform: scale(1.3); }
+}
+
+@keyframes flyingHeart {
+    0% {
+        transform: translate(-50%, 0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        transform: translate(-50%, -10px) scale(1.2);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50px) scale(1.4);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -100px) scale(1);
+        opacity: 0;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(45deg, var(--pink-dark), var(--pink-medium));
+    color: white;
+    margin-top: 60px;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--pink-light), var(--pink-medium));
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+    transform: scale(0);
+    border-radius: 50%;
+}
+
+.social-links a:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+        height: 100vh;
+    }
+
+    .names {
+        font-size: 2.5rem;
+        padding: 0 20px;
+    }
+
+    .wedding-date {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .countdown {
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .countdown-item {
+        min-width: calc(50% - 10px);
+        padding: 15px;
+    }
+
+    .countdown-item span {
+        font-size: 2rem;
+    }
+
+    /* Wedding Card */
+    .wedding-card {
+        margin: -50px 15px 0;
+        padding: 25px 15px;
+        border-radius: 15px;
+    }
+
+    /* Couple Section */
+    .couple-section {
+        padding: 30px 0;
+    }
+
+    .couple-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .heart-divider {
+        margin: 20px 0;
+    }
+
+    /* Event Details */
+    .event-details {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .event-card {
+        padding: 20px;
+    }
+
+    /* Love Story */
+    .love-story {
+        padding: 30px 0;
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .story-item {
+        width: calc(100% - 40px);
+        margin-left: 40px;
+        padding-left: 30px;
+    }
+
+    .story-item:nth-child(odd) {
+        margin-left: 40px;
+    }
+
+    .story-item::before {
+        left: -35px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-item {
+        height: 200px;
+    }
+
+    /* RSVP Form */
+    .rsvp-form {
+        padding: 0 15px;
+    }
+
+    .meal-preference {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .meal-preference label {
+        width: 100%;
+    }
+
+    /* Wishes Section */
+    .wishes {
+        padding: 30px 15px;
+        margin: 20px 0;
+    }
+
+    .wishes-container {
+        margin: 20px 0;
+        padding: 15px;
+    }
+
+    .wish-item {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .wish-form {
+        padding: 15px;
+    }
+
+    .wish-form input,
+    .wish-form textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .wish-form button {
+        padding: 12px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 15px;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+        margin: 0 15px;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+    .names {
+        font-size: 2rem;
+    }
+
+    .wedding-date {
+        font-size: 1.2rem;
+    }
+
+    .countdown-item {
+        min-width: calc(50% - 10px);
+        padding: 10px;
+    }
+
+    .countdown-item span {
+        font-size: 1.5rem;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .event-card {
+        padding: 15px;
+    }
+
+    .map-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .rsvp-form input,
+    .rsvp-form select,
+    .rsvp-form textarea {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .social-links a {
+        font-size: 1.2rem;
+        margin: 0 10px;
+    }
+}
+
+/* Thêm các hiệu ứng mượt mà cho mobile */
+@media (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button, 
+    input, 
+    select, 
+    textarea {
+        font-size: 16px; /* Ngăn iOS zoom khi focus input */
+    }
+
+    .gallery-item:active {
+        transform: scale(0.98);
+    }
+
+    .map-btn:active {
+        transform: scale(0.95);
+    }
+
+    /* Tối ưu scrolling */
+    .wishes-container {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Cải thiện touch targets */
+    .social-links a {
+        padding: 10px;
+    }
+
+    button {
+        min-height: 44px; /* Kích thước tối thiểu cho touch targets */
+    }
+}
+
+/* Thêm dark mode cho mobile */
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
+    body {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    .wedding-card {
+        background: linear-gradient(to bottom right, #1e1e1e, #2d2d2d);
+    }
+
+    .event-card,
+    .wishes-container {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    }
+
+    input, select, textarea {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(45deg, #ff6b6b, #ffd93d) border-box;
+        color: #ffffff;
+        border-color: #404040;
+    }
+
+    .countdown-item {
+        background: rgba(45, 45, 45, 0.9);
+        color: #ffffff;
+    }
+
+    .countdown-item span {
+        color: #ffffff;
+    }
+
+    .wishes {
+        background: #1e1e1e;
+    }
+
+    .wishes h2 {
+        color: #ffffff;
+    }
+
+    .wishes-container {
+        background: #2d2d2d;
+    }
+
+    .wish-item {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+        border-left: 4px solid var(--primary-color);
+    }
+
+    .wish-item .sender {
+        color: #ff8585;
+    }
+
+    .wish-item .message {
+        color: #ddd;
+    }
+
+    .wish-item .date {
+        color: #888;
+    }
+
+    .wish-form input,
+    .wish-form textarea {
+        background: linear-gradient(white, white) padding-box,
+                    linear-gradient(45deg, #ff6b6b, #ffd93d) border-box;
+        color: #ffffff;
+        border-color: #404040;
+    }
+
+    .wish-form input:focus,
+    .wish-form textarea:focus {
+        border-color: #ff8585;
+    }
+}
+
+/* Màu sắc chủ đạo mới */
+:root {
+    --pink-light: #ffb6c1;
+    --pink-medium: #ff69b4;
+    --pink-dark: #ff1744;
+    --pink-pale: #fff5f5;
+    --white: #ffffff;
+    --white-off: #f8f8f8;
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --pink-light: #ffb6c1;
+        --pink-medium: #ff69b4;
+        --pink-dark: #ff1744;
+        --pink-pale: #fff5f5;
+        --white: #ffffff;
+        --white-off: #f8f8f8;
+    }
+
+    .wedding-card {
+        background: linear-gradient(to bottom right, #1e1e1e, #2d2d2d);
+    }
+
+    .event-card {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+    }
+
+    .wish-item {
+        background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+        border-left: 4px solid var(--pink-light);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--white-off);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--pink-light), var(--pink-medium));
+    border-radius: 5px;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.wedding-card > * {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.wishes-section {
+    padding: 40px 20px;
+    background: var(--pink-pale);
+}
+
+.wishes-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.form-container {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #333;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+.rsvp-form {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+.rsvp-form input,
+.rsvp-form textarea {
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border: 2px solid var(--pink-light);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white-off);
+}
+
+.rsvp-form input:focus,
+.rsvp-form textarea:focus {
+    border-color: var(--pink-medium);
+    box-shadow: 0 0 15px rgba(255,105,180,0.1);
+    background: var(--white);
+}
+
+.rsvp-form textarea {
+    min-height: 180px;
+    resize: vertical;
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 1.1rem;
+}
+
+.rsvp-form textarea::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* Tùy chỉnh thanh cuộn cho textarea */
+.rsvp-form textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rsvp-form textarea::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+.rsvp-form textarea::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ffb6c1, #ff69b4);
+    border-radius: 10px;
+}
+
+.rsvp-form textarea:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 15px rgba(255,105,180,0.1);
+    background: #fff;
+}
+
+.rsvp-form button {
+    background: linear-gradient(45deg, var(--pink-light), var(--pink-medium));
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255,105,180,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.rsvp-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(255,105,180,0.4);
+}
+
+.rsvp-form button i {
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+}
+
+/* Hiệu ứng trái tim bay ra khi hover */
+.rsvp-form button:hover i {
+    animation: flyHeart 1s ease-in-out;
+}
+
+@keyframes flyHeart {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.2) rotate(20deg);
+    }
+    50% {
+        transform: scale(1.4) rotate(-20deg) translateY(-5px);
+    }
+    75% {
+        transform: scale(1.6) rotate(20deg) translateY(-10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(0) translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Thêm trái tim mới sau khi trái tim cũ bay đi */
+.rsvp-form button:hover::after {
+    content: '\f004';
+    font-family: 'Font Awesome 5 Free';
+    position: absolute;
+    right: 30px;
+    font-size: 1.2rem;
+    animation: newHeart 0.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+
+@keyframes newHeart {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Hiệu ứng placeholder */
+.rsvp-form input::placeholder,
+.rsvp-form textarea::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.5em;
+    }
+
+    .rsvp-form input,
+    .rsvp-form textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .rsvp-form button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 20px;
+    }
+}
+
+.wishes-container {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.wish-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.wish-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.wish-avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    color: #666;
+}
+
+.wish-avatar i {
+    font-size: 40px;
+}
+
+.wish-info h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.wish-date {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.wish-content {
+    color: #444;
+    line-height: 1.6;
+}
+
+.wish-content p {
+    margin: 0;
+}
+
+/* Responsive design cho mobile */
+@media (max-width: 768px) {
+    .wishes-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .form-container,
+    .wishes-container {
+        padding: 15px;
+    }
+}
+
+@keyframes highlightNew {
+    0% {
+        background-color: #fff5f5;
+        transform: translateY(-10px);
+    }
+    100% {
+        background-color: white;
+        transform: translateY(0);
+    }
+}
+
+/* Xóa animation cũ nếu có */
+@keyframes highlightNew {
+    0% {
+        background-color: #fff5f5;
+        transform: translateY(-10px);
+    }
+    100% {
+        background-color: white;
+        transform: translateY(0);
+    }
+} 
